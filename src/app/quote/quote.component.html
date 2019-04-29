@@ -1,6 +1,7 @@
 <h1>My Quotes</h1>
+<div class="container">
 <ul>
-  <div *ngFor='let quote of quotes; let i=index'>
+  <div *ngFor="let quote of quotes; let i='index'">
 
     <li>Quote:{{quote.quote}}</li>
 
@@ -10,3 +11,5 @@
 
   </div>  
 </ul>
+
+</div>
