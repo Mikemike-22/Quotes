@@ -1,15 +1,21 @@
 <h1>My Quotes</h1>
-<div class="container">
-<ul>
+
   <div *ngFor="let quote of quotes; let i='index'">
+    <ul>
 
     <li>Quote:{{quote.quote}}</li>
 
-    <button (click)="toggleDetails(i)">Details</button>
+    <button class="btn btn-outline-primary" (click)="toggleDetails(i)">Details</button>
 
-    <app-quote-details *ngIf="quote.showDescription" [quote]='quote' (isComplete)='deleteGoal($event,i)'></app-quote-details>
+    <app-quote-details *ngIf="quote.showDescription" [quote]='quote' (isComplete)='deleteGoal($event,i)'>
+    </app-quote-details>
 
-  </div>  
-</ul>
+    
+  </ul>
+  </div>
+  <div class="container">
+      <div class="row">
+        <app-quote-form></app-quote-form>
+      </div>
 
-</div>
+    </div>

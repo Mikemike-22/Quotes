@@ -11,7 +11,7 @@ export class DateCountPipe implements PipeTransform {
 
     let todayWithNoTime:any= new Date(today.getFullYear(),today.getMonth(),today.getDate())
 
-    var dateDifference=Math.abs(value-todayWithNoTime)
+    var dateDifference=Math.abs(todayWithNoTime-value)
 
     const secondsInADay=86400;
 
