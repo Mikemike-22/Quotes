@@ -6,7 +6,7 @@
 
     <button (click)="toggleDetails(i)">Details</button>
 
-    <app-quote-details *ngIf="quote.showDescription" [quote]='quote' (isComplete)='completeGoal($event,i)'></app-quote-details>
+    <app-quote-details *ngIf="quote.showDescription" [quote]='quote' (isComplete)='deleteGoal($event,i)'></app-quote-details>
 
   </div>  
 </ul>

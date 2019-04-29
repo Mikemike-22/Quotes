@@ -9,7 +9,7 @@ import {Quote} from '../quote'
 export class QuoteComponent implements OnInit {
 
   quotes= [
-    new Quote(1,"An apple a day keeps the doctor away","Not A Doctor","Michael",0,0,new Date()),
+    new Quote(1,"An apple a day keeps the doctor away","Not A Doctor","Michael",0,0,new Date(4,28,2019)),
     new Quote(2,"First solve the problem then write the code","John Johnson","Michael",0,0,new Date ())
   ]
 
@@ -17,9 +17,13 @@ export class QuoteComponent implements OnInit {
     this.quotes[index].showDescription= !this.quotes[index].showDescription;
   }
 
-  completeGoal(isComplete,index){
+  deleteGoal(isComplete,index){
     if(isComplete){
+      let toDelete=confirm(`Are you sure you want to delete ${this.quotes[index].quote}`)
+
+      if(toDelete){
       this.quotes.splice(index,1);
+    }
     }
   }
   constructor() { }

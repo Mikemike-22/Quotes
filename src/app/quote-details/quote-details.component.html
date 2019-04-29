@@ -1,4 +1,6 @@
 <p>Author:{{quote.author}}<br> Publisher:{{quote.publisher}}<br> Upvote:{{quote.upvote}}<br> Downvote:{{quote.downvote}}<br> ActualDate:{{quote.actualDate}}<br>
+  Time Passed Since Creation: {{quote.completeDate|dateCount}}
+  <br>
 
   <button (click) = 'quoteComplete(true)'>Delete</button>
 </p>
