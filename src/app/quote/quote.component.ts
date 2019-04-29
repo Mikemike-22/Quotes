@@ -13,6 +13,17 @@ export class QuoteComponent implements OnInit {
     new Quote(2,"First solve the problem then write the code","John Johnson","Michael",0,0,new Date ())
   ]
 
+  addNewQuote(quote){
+    let quoteLength = this.quotes.length;
+
+    quote.id = quoteLength+1;
+
+    quote.completeDate= new Date(quote.completeDate)
+
+    this.quotes.push(quote)
+
+  }
+
   toggleDetails(index){
     this.quotes[index].showDescription= !this.quotes[index].showDescription;
   }
