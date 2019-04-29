@@ -1,11 +1,15 @@
 <div class="container-fluid">
   <div class="row">
-    <form #goalForm='ngForm'>
+    <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
 
 
       <div class="form-group">
         <label for="quote">Quote:</label>
-        <textarea  required class="form-control" id="quote" cols="20" rows="10" [(ngModel)]="newQuote.quote" name="quote" #quoteref="ngModel"required></textarea> 
+        <textarea   class="form-control" id="quote" cols="20" rows="10" [(ngModel)]="newQuote.quote" name="quote" #quote="ngModel" required></textarea>
+        
+        <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
+        <p>A Quote is required</p>
+        </div>
         
          
       </div>
@@ -13,18 +17,33 @@
 
       <div class="form-group">
         <label for="author">Author:</label>
-        <input type="text" required class="form-control" id="author" [(ngModel)]="newQuote.author" name="author">
+        <input type="text" required class="form-control" id="author" [(ngModel)]="newQuote.author" name="author" #author="ngModel" required>
+        
+      
+
+        <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+          <p>Enter Author Name</p>
+        </div>
        
       </div>
 
       <div class="form-group">
         <label for="publisher">Posted By:</label>
         <input type="text" required class="form-control" id="publisher" [(ngModel)]="newQuote.publisher" name="publisher" #publisher="ngModel">
+
+        <div [hidden]="publisher.valid || publisher.pristine" class= "alert alert-danger">
+          <p>Enter Your Name!</p>
+        </div>
       </div>
 
       <div class="form-group">
         <label for="actualDate">Date Posted:</label>
         <input type="date" required class="form-control" id="date" [(ngModel)]="newQuote.actualDate" name="actualdate" #actualDate="ngModel" required >
+
+      <div [hidden]="actualDate.valid || actualDate.pristine" class="alert alert-danger">
+        <p>Enter A Date!</p>
+      </div>
+
       </div>
 
       <button type="submit" class="btn btn-outline-success btn-lg">Add Quote</button>
