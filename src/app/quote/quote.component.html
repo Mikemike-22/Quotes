@@ -4,7 +4,7 @@
 
     <li>Quote:{{quote.quote}}</li>
 
-    <button (click)="toogleDetails(i)">Details</button>
+    <button (click)="toggleDetails(i)">Details</button>
     <app-quote-details *ngIf="quote.showDescription" [quote]='quote'></app-quote-details>
 
   </div>  
