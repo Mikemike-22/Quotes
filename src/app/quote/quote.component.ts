@@ -13,6 +13,10 @@ export class QuoteComponent implements OnInit {
     new Quote(2,"First solve the problem then write the code","John Johnson","Michael",0,0,new Date ())
   ]
 
+  toggleDetails(index){
+    this.quotes[index].showDescription= !this.quotes[index].showDescription;
+  }
+
   constructor() { }
 
   ngOnInit() {
