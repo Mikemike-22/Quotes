@@ -21,11 +21,7 @@ export class DateCountPipe implements PipeTransform {
 
     
 
-    if(dateCounter >= 1 && value > todayWithNoTime){
-      return 0;
-    }else{
-      return Math.round(dateCounter);
-    }
+    return dateCounter;
   }
 
 }

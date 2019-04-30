@@ -38,13 +38,13 @@ export class QuoteComponent implements OnInit {
     }
   }
   
-  upVote(upVoting,index){
-    if(upVoting){
+  upVote(upvote,index){
+    if(upvote){
       this.quotes[index].upVote +=1;
     }
   }
-  downVote(downVoting,index){
-    if(downVoting){
+  downVote(downvote,index){
+    if(downvote){
       this.quotes[index].downVote +=1
     }
   }

@@ -10,7 +10,7 @@
 
     <button class="btn btn-outline-primary" (click)="toggleDetails(i)">Details</button>
 
-    <app-quote-details *ngIf="quote.showDescription" [quote]='quote' (isComplete)='deleteGoal($event,i)' (vote)='upVote($event,position)' (downVote)='downVote($event,position)'>
+    <app-quote-details *ngIf="quote.showDescription" [quote]='quote' (isComplete)='deleteGoal($event,i)' (upvote)='upVote($event,i)' (downvote)='downVote($event,i)'>
     </app-quote-details>
 
     
