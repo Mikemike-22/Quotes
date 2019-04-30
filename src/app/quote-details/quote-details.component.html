@@ -1,7 +1,21 @@
 <p>Quote:{{quote.quote}}<br>
-  Author:{{quote.author}}<br> Publisher:{{quote.publisher}}<br> Upvote:{{quote.upvote}}<br> Downvote:{{quote.downvote}}<br> ActualDate:{{quote.actualDate}}<br>
-  Time Passed Since Creation: {{quote.completeDate|dateCount}}
+  Author:{{quote.author}}<br> Publisher:{{quote.publisher}}<br> Likes:{{quote.upVote}}<br> Dislikes:{{quote.downVote}}<br> ActualDate:{{quote.actualDate}}<br>
+  Time Passed Since Posting: {{quote.actualDate|dateCount}}
   <br>
 
-  <button (click) = 'quoteComplete(true)'>Delete</button>
+  
 </p>
+
+<div class="row">
+  <div class="col-md-4">
+    <button class="btn btn-outline-success" (click)='upVote(true)'>Likes</button>
+  </div>
+  <div class="col-md-4">
+    <button class="btn btn-outline-secondary" (click)='downVote(true)'>Dislikes</button>
+  </div>
+  <div class="col-md-4" >
+  <button class="btn btn-outline-danger" (click) = 'quoteComplete(true)'>Delete</button>
+</div>
+
+
+</div>
